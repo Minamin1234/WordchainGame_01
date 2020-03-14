@@ -24,6 +24,8 @@ namespace WordChainGame_01
         {
             InitializeComponent();
             //this.Visibility = Visibility.Hidden;
+            Proglam.Current_Window = this;
+            Proglam.Type_Window = Game.UIs.Game;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

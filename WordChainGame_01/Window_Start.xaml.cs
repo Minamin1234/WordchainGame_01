@@ -20,17 +20,17 @@ namespace WordChainGame_01
     public partial class Window_Start : Window
     {
 
-        Game Proglam = new Game();
 
         public Window_Start()
         {
             InitializeComponent();
-            
+            Proglam.Current_Window = this;
+            Proglam.Type_Window = Game.UIs.Start;
         }
 
-        
 
-        
+        Game Proglam = new Game();
+
 
         private void Clicked(object sender, RoutedEventArgs e)
         {

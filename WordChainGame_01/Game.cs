@@ -10,9 +10,47 @@ namespace WordChainGame_01
     public class Game
     {
 
+        public bool IsCalled = false;
+
+        public void GetAssignedUIs(UIs Target_UI)
+        {
+            switch (Target_UI)
+            {
+                case UIs.Start:
+                    {
+                        UI_Start = new Window_Start();
+                        break;
+                    }
+
+                case UIs.Game:
+                    {
+                        UI_Game = new Window_Game();
+                        break;
+                    }
+
+                case UIs.None:
+                    {
+                        break;
+                    }
+
+                default:
+                    {
+                        break;
+                    }
+            }
+
+        }
+
+        public Game()
+        {
+        }
+
+
+
         //Assign UIs
-        public Window_Start UI_Start = new Window_Start();
-        public Window_Game UI_Game = new Window_Game();
+        public Window_Start UI_Start = null;
+        public Window_Game UI_Game = null;
+
 
         public enum Open_Close
         {
@@ -31,12 +69,7 @@ namespace WordChainGame_01
         public Window Current_Window = null;
 
 
-        public Game()
-        {
-            Current_Window = UI_Start;
-            UI_Game.Show();
-            UI_Game.Visibility = Visibility.Hidden;
-        }
+        
 
         public void Change_UI(UIs Change_To)
         {
@@ -51,6 +84,7 @@ namespace WordChainGame_01
                     {
                         if (Type_Window != UIs.Start)
                         {
+                            GetAssignedUIs(UIs.Start);
                             UI_Start.Visibility = Visibility.Visible;
                             Current_Window.Visibility = Visibility.Hidden;
                             Current_Window = UI_Start;
@@ -67,6 +101,8 @@ namespace WordChainGame_01
                     {
                         if (Type_Window != UIs.Game)
                         {
+                            GetAssignedUIs(UIs.Game);
+                            UI_Game.Show();
                             UI_Game.Visibility = Visibility.Visible;
                             Current_Window.Visibility = Visibility.Hidden;
                             Current_Window = UI_Game;
