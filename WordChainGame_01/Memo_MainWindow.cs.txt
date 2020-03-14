@@ -1,0 +1,106 @@
+﻿class Main_Program
+        {
+            void write()
+            {
+                Console.WriteLine("Hello");
+            }
+        }
+
+        public enum Open_Close
+        {
+            Open,
+            Close,
+        }
+        //Open_Close Current_Open_Close = Open_Close.Open;
+
+        public enum UIs
+        {
+            None,
+            Start,
+            Game,
+        }
+
+        public UIs Type_Window = UIs.None;
+
+        public Window Current_Window = null;
+
+
+
+
+        public void Change_UI(UIs Change_To)
+        {
+            switch (Change_To)
+            {
+                case UIs.None:
+                    {
+                        break;
+                    }
+
+                case UIs.Start:
+                    {
+                        if(Type_Window != UIs.Start)
+                        {
+                            Window_Start UI_Start = new Window_Start();
+                            if (Type_Window != UIs.None)
+                            {
+                                UI_Start.Visibility = Visibility.Hidden;
+                                this.Visibility = Visibility.Visible;
+                            }
+                            else
+                            {
+                                UI_Start.Show();
+                                this.Visibility = Visibility.Hidden;
+                            }
+                            Type_Window = UIs.Start;
+                            Current_Window = UI_Start;
+                            
+
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    }
+
+                case UIs.Game:
+                    {
+                        if(Type_Window != UIs.Game)
+                        {
+                            
+                        }
+                        else
+                        {
+
+                        }
+                        break;
+                    }
+
+                default:
+                    {
+                        break;
+                    }
+            }
+        }
+
+        public void Clicked(object sender, RoutedEventArgs e)
+        {
+            Button Clicked_Button = (Button)sender;
+            Console.WriteLine(Clicked_Button.Name);
+            switch (Clicked_Button.Name)
+            {
+                case "Start":
+                    {
+                        Change_UI(UIs.Start);
+                        break;
+                    }
+
+                default:
+                    {
+                        
+                        break;
+                    }
+            }
+            
+            
+        }

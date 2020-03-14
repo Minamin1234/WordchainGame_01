@@ -19,9 +19,22 @@ namespace WordChainGame_01
     /// </summary>
     public partial class Window_Start : Window
     {
+
+        Game Proglam = new Game();
+
         public Window_Start()
         {
             InitializeComponent();
+            
+        }
+
+        
+
+        
+
+        private void Clicked(object sender, RoutedEventArgs e)
+        {
+            Proglam.Go_Game();
         }
     }
 }

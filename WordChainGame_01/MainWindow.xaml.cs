@@ -25,85 +25,38 @@ namespace WordChainGame_01
             InitializeComponent();
         }
 
+        //Game GameProglams = new Game();
+        //Window_Start UI_Start = new Window_Start();
+        //Window_Game UI_Game = new Window_Game();
 
 
-        enum Open_Close
+        public void Clicked(object sender, RoutedEventArgs e)
         {
-            Open,
-            Close,
-        }
-        //Open_Close Current_Open_Close = Open_Close.Open;
-
-        enum UIs
-        {
-            None,
-            Start,
-            Game,
-        }
-
-        UIs Current_UI = UIs.Start;
-
-        Window Current_Window = null;
+            Button Clicked_Button = (Button)sender;
+            Console.WriteLine(Clicked_Button.Name);
 
 
 
 
-        void Change_UI(UIs Change_To ,Open_Close Open_Close)
-        {
-            switch (Change_To)
+
+            switch (Clicked_Button.Name)
             {
-                case UIs.None:
+                case "Start":
                     {
-                        break;
-                    }
-
-                case UIs.Start:
-                    {
-                        if(Current_UI != UIs.Start)
-                        {
-                            Window_Start UI_Start = new Window_Start();
-                            if (Current_UI != UIs.None)
-                            {
-                                UI_Start.Visibility = Visibility.Visible;
-                            }
-                            else
-                            {
-                                UI_Start.Show();
-                            }
-                            Current_UI = UIs.Start;
-                            Current_Window = UI_Start;
-                            
-
-                        }
-                        break;
-                    }
-
-                case UIs.Game:
-                    {
-                        if(Current_UI != UIs.Game)
-                        {
-                            
-                        }
-                        else
-                        {
-
-                        }
+                        //Change_UI(UIs.Start);
                         break;
                     }
 
                 default:
                     {
+
                         break;
                     }
             }
+
+
         }
 
-        private void Clicked(object sender, RoutedEventArgs e)
-        {
-            Button Clicked_Button = (Button)sender;
-            Console.WriteLine(Clicked_Button.Name);
-            
-            
-        }
+
     }
 }

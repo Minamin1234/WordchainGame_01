@@ -19,10 +19,16 @@ namespace WordChainGame_01
     /// </summary>
     public partial class Window_Game : Window
     {
+        Game Proglam = new Game();
         public Window_Game()
         {
             InitializeComponent();
-            this.Visibility = Visibility.Hidden;
+            //this.Visibility = Visibility.Hidden;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Proglam.Back_To_Start();
         }
     }
 }
