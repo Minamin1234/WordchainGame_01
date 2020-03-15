@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Window_Start" Height="450" Width="800">
     <Grid>
-        <Button x:Name="Play" Content="Play" HorizontalAlignment="Left" Margin="323,177,0,0" VerticalAlignment="Top" Width="126" Click="Clicked"/>
+        <Button x:Name="Play" Content="Play" HorizontalAlignment="Left" Margin="283,189,0,0" VerticalAlignment="Top" Width="210" Click="Clicked" Height="60" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Margin="283,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" TextAlignment="Center" Height="40" FontSize="24"><Run Text="Word Chain Game"/><LineBreak/><Run/></TextBlock>
 
     </Grid>
 </Window>

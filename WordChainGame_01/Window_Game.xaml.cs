@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using System.Data;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
 namespace WordChainGame_01
 {
     /// <summary>
@@ -19,13 +23,25 @@ namespace WordChainGame_01
     /// </summary>
     public partial class Window_Game : Window
     {
+
+        
+
         Game Proglam = new Game();
+
+        public class WordDatas
+        {
+            public string Words { get; set; }
+            public bool IsChecked { get; set; }
+        }
+
         public Window_Game()
         {
             InitializeComponent();
             //this.Visibility = Visibility.Hidden;
             Proglam.Current_Window = this;
             Proglam.Type_Window = Game.UIs.Game;
+
+            //ObservableCollection<WordDatas> wordDatas = G
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
